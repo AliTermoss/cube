@@ -1,0 +1,96 @@
+body{
+    background-color:rgb(12, 12, 12) ;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.cube{
+    position: relative; 
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg);
+    animation:  rotate 4s linear infinite;
+}
+
+.cube span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(black, blue);
+    left: 0;
+    top: 0;
+    animation:  color 15s linear infinite;
+    transform: rotateY(calc(90deg*var(--a))) translateZ(150px);
+}
+
+
+
+@keyframes rotate{
+    0%{
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+
+
+    100%{
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+}
+
+@keyframes color{
+    30%{
+       background:  linear-gradient(black, rgb(36, 247, 8));
+    }
+
+    50%{
+        background:  linear-gradient(black, rgb(245, 2, 2));
+     }
+
+    70%{
+        background:  linear-gradient(black, rgb(250, 142, 1));
+     }
+
+     100%{
+        background:  linear-gradient(black, blue);
+     }
+}
+
+.top{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:linear-gradient(black, blue);
+    animation:  color 15s linear infinite;
+    transform: rotateX(90deg) translateZ(150px)
+}
+
+.bottom{
+    width: 300px;
+    height: 300px;
+    background: blue;
+    transform: translateY(200px) rotateX(90deg);
+    animation:  color1 15s linear infinite;
+    filter: blur(20px);
+}
+
+@keyframes color1{
+    30%{
+       background:   rgb(36, 247, 8);
+    }
+
+    50%{
+        background:  rgb(245, 2, 2);
+     }
+
+    70%{
+        background: rgb(250, 142, 1);
+     }
+
+     100%{
+        background:   blue;
+     }
+}
